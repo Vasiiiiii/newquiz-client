@@ -1,44 +1,69 @@
+/* quiz.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3, #4e54c8, #8f94fb);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
+    color: #fff;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 .container {
-    background-color: #ffffff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    padding: 20px;
-    border-radius: 10px;
-    width: 80%;
+    width: 100%;
     max-width: 600px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
     text-align: center;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 h1, h2 {
+    margin-bottom: 20px;
+    font-size: 30px;
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+button {
+    background-color: #ff758c;
+    border: none;
+    border-radius: 25px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 10px 20px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+button:hover {
+    background-color: #ff7eb3;
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
 }
 
 .hidden {
     display: none;
-}
-
-button {
-    background-color: #007BFF;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    margin-top: 10px;
-}
-
-button:hover {
-    background-color: #0056b3;
 }
 
 ul {
@@ -46,10 +71,30 @@ ul {
     padding: 0;
 }
 
-li {
+ul li {
     margin: 10px 0;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
 }
 
-.quiz-container, .result {
-    display: none;
+ul li:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+#question-container {
+    margin: 20px 0;
+}
+
+#result p, #result ul {
+    font-size: 18px;
+}
+
+#result ul li {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    margin-top: 10px;
 }
